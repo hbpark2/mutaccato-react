@@ -1,10 +1,10 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import App from "./Components/Routes/App";
+import React from 'react'
+import ReactDOM from 'react-dom'
+import App from './Components/Routes/App'
 
 ReactDOM.render(
-	<>
-		<App />
-	</>,
-	document.getElementById("wrapper")
-);
+  <>
+    <App />
+  </>,
+  document.getElementById('wrapper')
+)

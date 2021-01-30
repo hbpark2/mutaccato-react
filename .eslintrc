@@ -1,0 +1,41 @@
+{
+    "extends": ["prettier", "prettier"],
+    "env": {
+      "browser": true,
+      "es6": true,
+      "node": true,
+      "jest": true
+    },
+    "globals": {
+      "Atomics": "readonly",
+      "SharedArrayBuffer": "readonly",
+      "fetch": true
+    },
+    "parser": "babel-eslint",
+    "parserOptions": {
+      "ecmaFeatures": {
+        "jsx": true
+      },
+      "ecmaVersion": 2018,
+      "sourceType": "module"
+    },
+    "plugins": ["react", "prettier", "jest"],
+    "rules": {
+      "jest/no-disabled-tests": "warn",
+      "jest/no-focused-tests": "error",
+      "jest/no-identical-title": "error",
+      "jest/prefer-to-have-length": "warn",
+      "jest/valid-expect": "error",
+      "no-console": "off",
+      "react/prop-types": 0,
+      "indent": "off",
+      // "indent": ["error", 2, {"SwitchCase": 1}],
+      // "linebreak-style": ["error", "windows"],
+      "quotes": ["error", "single"],
+      "semi": ["error", "never"],
+      "object-curly-spacing": ["error", "never"],
+      "array-bracket-spacing": ["error", "never"],
+      "computed-property-spacing": ["error", "never"]
+    }
+  }
+  

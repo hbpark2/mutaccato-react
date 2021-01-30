@@ -1,7 +1,7 @@
-import React from "react";
-
+import React from 'react'
+import styled from 'styled-components'
 const Main = () => {
-	return <div></div>;
-};
+  return <div id="content"></div>
+}
 
-export default Main;
+export default Main
