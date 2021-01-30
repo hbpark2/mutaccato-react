@@ -15,6 +15,7 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.1",
     "styled-components": "^5.2.1",
+    "swiper": "^6.4.10",
     "web-vitals": "^0.2.4"
   },
   "scripts": {
@@ -29,6 +30,7 @@
       "react-app/jest"
     ]
   },
+  "homepage" : "https://elastic-jang-1dba9b.netlify.app/",
   "browserslist": {
     "production": [
       ">0.2%",
