@@ -16,7 +16,8 @@
     "react-scripts": "4.0.1",
     "styled-components": "^5.2.1",
     "swiper": "^6.4.10",
-    "web-vitals": "^0.2.4"
+    "web-vitals": "^0.2.4",
+    "webpack-manifest-plugin": "^3.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -30,7 +31,7 @@
       "react-app/jest"
     ]
   },
-  "homepage" : "https://elastic-jang-1dba9b.netlify.app/",
+  "homepage": "https://elastic-jang-1dba9b.netlify.app/",
   "browserslist": {
     "production": [
       ">0.2%",
