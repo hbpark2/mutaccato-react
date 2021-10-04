@@ -5,6 +5,7 @@ import DetailPageMenu from 'assets/img/banner/menu_detail.jpg'
 import EventMenu from 'assets/img/banner/event_menu.jpg'
 import LookBookMenu from 'assets/img/banner/menu_lookbook.jpg'
 import InstaLogo from 'assets/img/insta.png'
+import {Link} from 'react-router-dom'
 
 const Container = styled.header``
 
@@ -27,7 +28,6 @@ const Header = () => {
 
     if (window.innerWidth > 1024) {
       headerBox?.addEventListener('mouseover', () => {
-        console.log('a')
         if (article?.style) {
           article.style.filter = 'grayscale(95%)'
         }
@@ -94,7 +94,6 @@ const Header = () => {
         gnb.style.height = window.innerHeight + 'px'
 
         menuBtn?.addEventListener('click', () => {
-          console.log('a')
           if (moving) {
             menuBtn.style.transform = 'rotate(360deg)'
             moving = false
@@ -121,9 +120,9 @@ const Header = () => {
     <Container>
       <h1 className="logo">
         <span className="hidden">MUTACCATO</span>
-        <a href="index.html">
+        <Link to="/">
           <img src={Logo} alt="mutaccatologo" />
-        </a>
+        </Link>
       </h1>
       <nav>
         <h2 className="hidden">GNB section</h2>
@@ -132,13 +131,13 @@ const Header = () => {
         </button>
         <ul id="gnb">
           <li className="depth_1">
-            <a href="sub_1.html">About M</a>
+            <Link to="/about">About M</Link>
           </li>
 
           <li className="depth_1 depth_detail">
-            <a href="sub_2_1.html" className="go_detail">
+            <Link to="/page_detail/furniture" className="go_detail">
               Page Detail
-            </a>
+            </Link>
 
             <ul className="depth_detail_box">
               <li className="tit">Page Detail</li>
@@ -146,13 +145,13 @@ const Header = () => {
               <li className="menu_detail">
                 <ul className="depth_2_box">
                   <li className="depth_2">
-                    <a href="sub_2_1.html">Furniture</a>
+                    <Link to="/page_detail/furniture">Furniture</Link>
                   </li>
                   <li className="depth_2">
-                    <a href="sub_2_2.html">Food</a>
+                    <Link to="/page_detail/food">Food</Link>
                   </li>
                   <li className="depth_2">
-                    <a href="sub_2_3.html">Pop-up(Banner)</a>
+                    <Link to="/page_detail/banner">Pop-up(Banner)</Link>
                   </li>
                 </ul>
               </li>
@@ -164,9 +163,9 @@ const Header = () => {
           </li>
 
           <li className="depth_1 depth_lookbook">
-            <a href="sub_3_1.html" className="go_detail">
+            <Link to="/lookbook" className="go_detail">
               Lookbook
-            </a>
+            </Link>
 
             <ul className="depth_detail_box">
               <li className="tit">Look Book</li>
@@ -174,13 +173,13 @@ const Header = () => {
               <li className="menu_detail">
                 <ul className="depth_2_box">
                   <li className="depth_2">
-                    <a href="sub_3_1.html">2018.s/s</a>
+                    <Link to="/lookbook/2018ss">2018.s/s</Link>
                   </li>
                   <li className="depth_2">
-                    <a href="sub_3_2.html">2018.f/w</a>
+                    <Link to="/lookbook/2018fw">2018.f/w</Link>
                   </li>
                   <li className="depth_2">
-                    <a href="sub_3_3.html">2019.s/s</a>
+                    <Link to="/lookbook/2019ss">2019.s/s</Link>
                   </li>
                 </ul>
               </li>
@@ -192,7 +191,7 @@ const Header = () => {
           </li>
 
           <li className="depth_1">
-            <a href="sub_4.html">Album Cover</a>
+            <Link to="/albumcover">Album Cover</Link>
           </li>
 
           <li className="depth_1 depth_eventdesign">
