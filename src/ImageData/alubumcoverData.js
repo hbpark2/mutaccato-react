@@ -1,0 +1,83 @@
+import A1 from 'assets/img/albumcover/m_1.jpg'
+import A2 from 'assets/img/albumcover/m_2.jpg'
+import A3 from 'assets/img/albumcover/m_3.jpg'
+import A4 from 'assets/img/albumcover/m_4.jpg'
+import A5 from 'assets/img/albumcover/m_5.jpg'
+import A6 from 'assets/img/albumcover/m_6.jpg'
+import A7 from 'assets/img/albumcover/m_7.jpg'
+import A8 from 'assets/img/albumcover/m_8.jpg'
+import A9 from 'assets/img/albumcover/m_9.jpg'
+import A10 from 'assets/img/albumcover/m_10.jpg'
+import A11 from 'assets/img/albumcover/m_11.jpg'
+import A12 from 'assets/img/albumcover/m_12.jpg'
+import A13 from 'assets/img/albumcover/m_13.jpg'
+import A14 from 'assets/img/albumcover/m_14.jpg'
+import A15 from 'assets/img/albumcover/m_15.jpg'
+import A16 from 'assets/img/albumcover/m_16.jpg'
+import A17 from 'assets/img/albumcover/m_17.jpg'
+import A18 from 'assets/img/albumcover/m_18.jpg'
+import A19 from 'assets/img/albumcover/m_19.jpg'
+import A20 from 'assets/img/albumcover/m_20.jpg'
+import A21 from 'assets/img/albumcover/m_21.jpg'
+import A22 from 'assets/img/albumcover/m_22.jpg'
+import A23 from 'assets/img/albumcover/m_23.jpg'
+import A24 from 'assets/img/albumcover/m_24.jpg'
+import A25 from 'assets/img/albumcover/m_25.jpg'
+import A26 from 'assets/img/albumcover/m_26.jpg'
+import A27 from 'assets/img/albumcover/m_27.jpg'
+import A28 from 'assets/img/albumcover/m_28.jpg'
+import A29 from 'assets/img/albumcover/m_29.jpg'
+import A30 from 'assets/img/albumcover/m_30.jpg'
+import A31 from 'assets/img/albumcover/m_31.jpg'
+import A32 from 'assets/img/albumcover/m_32.jpg'
+import A33 from 'assets/img/albumcover/m_33.jpg'
+import A34 from 'assets/img/albumcover/m_34.jpg'
+import A35 from 'assets/img/albumcover/m_35.jpg'
+import A36 from 'assets/img/albumcover/m_36.jpg'
+import A37 from 'assets/img/albumcover/m_37.jpg'
+import A38 from 'assets/img/albumcover/m_38.jpg'
+import A39 from 'assets/img/albumcover/m_39.jpg'
+import A40 from 'assets/img/albumcover/m_40.jpg'
+
+export const albumcoverData = [
+  {url: A1, link: 'https://www.melon.com/album/detail.htm?albumId=10172962'},
+  {url: A2, link: 'https://www.melon.com/album/detail.htm?albumId=10187093'},
+  {url: A3, link: 'https://www.melon.com/album/detail.htm?albumId=10191271'},
+  {url: A4, link: 'https://www.melon.com/album/detail.htm?albumId=10195587'},
+  {url: A5, link: 'https://www.melon.com/album/detail.htm?albumId=10207850'},
+  {url: A6, link: 'https://www.melon.com/album/detail.htm?albumId=10213676'},
+  {url: A7, link: 'https://www.melon.com/album/detail.htm?albumId=10218305'},
+  {url: A8, link: 'https://www.melon.com/album/detail.htm?albumId=10219668'},
+  {url: A9, link: 'https://www.melon.com/song/detail.htm?songId=31417892'},
+  {url: A10, link: 'https://www.melon.com/album/detail.htm?albumId=10224208'},
+  {url: A11, link: 'https://www.melon.com/album/detail.htm?albumId=10231563'},
+  {url: A12, link: 'https://www.melon.com/album/detail.htm?albumId=10233527'},
+  {url: A13, link: 'https://www.melon.com/album/detail.htm?albumId=10242604'},
+  {url: A14, link: 'https://www.melon.com/album/detail.htm?albumId=10253729'},
+  {url: A15, link: 'https://www.melon.com/album/detail.htm?albumId=10255551'},
+  {url: A16, link: 'https://www.youtube.com/watch?v=PCjwcgohSuI'},
+  {url: A17, link: 'https://www.youtube.com/watch?v=s5DihuV7Hp0'},
+  {url: A18, link: 'https://www.melon.com/album/detail.htm?albumId=10275765'},
+  {url: A19, link: 'https://www.melon.com/album/detail.htm?albumId=10293864'},
+  {url: A20, link: 'https://www.melon.com/album/detail.htm?albumId=10302141'},
+  {url: A21, link: 'https://www.melon.com/album/detail.htm?albumId=10281024'},
+  {url: A22, link: 'https://www.melon.com/album/detail.htm?albumId=10314260'},
+  {url: A23, link: 'https://www.melon.com/album/detail.htm?albumId=10318012'},
+  {url: A24, link: 'https://www.melon.com/album/detail.htm?albumId=10323871'},
+  {url: A25, link: 'https://www.melon.com/album/detail.htm?albumId=10317219'},
+  {url: A26, link: 'https://www.melon.com/album/detail.htm?albumId=10334316'},
+  {url: A27, link: 'https://www.melon.com/album/detail.htm?albumId=10350914'},
+  {url: A28, link: 'https://www.melon.com/album/detail.htm?albumId=10353125'},
+  {url: A29, link: 'https://www.melon.com/album/detail.htm?albumId=10364674'},
+  {url: A30, link: 'https://www.melon.com/album/detail.htm?albumId=10374512'},
+  {url: A31, link: 'https://www.melon.com/album/detail.htm?albumId=10375683'},
+  {url: A32, link: 'https://www.melon.com/album/detail.htm?albumId=10397434'},
+  {url: A33, link: 'https://www.melon.com/album/detail.htm?albumId=10417383'},
+  {url: A34, link: 'https://www.melon.com/album/detail.htm?albumId=10434282'},
+  {url: A35, link: 'https://www.melon.com/album/detail.htm?albumId=10453075'},
+  {url: A36, link: ''},
+  {url: A37, link: 'https://www.melon.com/album/detail.htm?albumId=10473792'},
+  {url: A38, link: 'https://www.melon.com/album/detail.htm?albumId=10494735'},
+  {url: A39, link: 'https://www.melon.com/album/detail.htm?albumId=10523688'},
+  {url: A40, link: 'https://www.melon.com/album/detail.htm?albumId=10540090'},
+]

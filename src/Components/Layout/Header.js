@@ -19,12 +19,9 @@ const Header = () => {
     const targetDetailLookbook = document.querySelector('.depth_lookbook > ul')
 
     const article = document.getElementById('content')
-    let menuDetail = document.querySelectorAll('.menu_detail')
 
     const menuBtn = document.querySelector('.menu_btn')
     const gnb = document.getElementById('gnb')
-    const goPagedetail = document.querySelector('.go_detail')
-    // goPagedetail.addEventListener("click", () => (location.href = "sub_1.html"));
 
     if (window.innerWidth > 1024) {
       headerBox?.addEventListener('mouseover', () => {
@@ -135,7 +132,7 @@ const Header = () => {
           </li>
 
           <li className="depth_1 depth_detail">
-            <Link to="/page_detail/furniture" className="go_detail">
+            <Link to={{pathname: '/page_detail', state: {pageState: 'Furniture'}}} className="go_detail">
               Page Detail
             </Link>
 
@@ -145,13 +142,13 @@ const Header = () => {
               <li className="menu_detail">
                 <ul className="depth_2_box">
                   <li className="depth_2">
-                    <Link to="/page_detail/furniture">Furniture</Link>
+                    <Link to={{pathname: '/page_detail', state: {pageState: 'Furniture'}}}>Furniture</Link>
                   </li>
                   <li className="depth_2">
-                    <Link to="/page_detail/food">Food</Link>
+                    <Link to={{pathname: '/page_detail', state: {pageState: 'Food'}}}>Food</Link>
                   </li>
                   <li className="depth_2">
-                    <Link to="/page_detail/banner">Pop-up(Banner)</Link>
+                    <Link to={{pathname: '/page_detail', state: {pageState: 'Banner'}}}>Pop-up(Banner)</Link>
                   </li>
                 </ul>
               </li>
@@ -163,7 +160,7 @@ const Header = () => {
           </li>
 
           <li className="depth_1 depth_lookbook">
-            <Link to="/lookbook" className="go_detail">
+            <Link to={{pathname: '/look_book', state: {pageState: '2018SS'}}} className="go_detail">
               Lookbook
             </Link>
 
@@ -173,13 +170,13 @@ const Header = () => {
               <li className="menu_detail">
                 <ul className="depth_2_box">
                   <li className="depth_2">
-                    <Link to="/lookbook/2018ss">2018.s/s</Link>
+                    <Link to={{pathname: '/look_book', state: {pageState: '2018SS'}}}>2018.s/s</Link>
                   </li>
                   <li className="depth_2">
-                    <Link to="/lookbook/2018fw">2018.f/w</Link>
+                    <Link to={{pathname: '/look_book', state: {pageState: '2019FW'}}}>2018.f/w</Link>
                   </li>
                   <li className="depth_2">
-                    <Link to="/lookbook/2019ss">2019.s/s</Link>
+                    <Link to={{pathname: '/look_book', state: {pageState: '2019SS'}}}>2019.s/s</Link>
                   </li>
                 </ul>
               </li>

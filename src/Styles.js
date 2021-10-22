@@ -21,28 +21,8 @@ export const FadeIn = keyframes`
 `
 
 export const lightTheme = {
-  accent: '#0095f6',
-  fontColor: 'rgb(38,38,38)',
-  bgColor: '#fffef2',
-  beige2: '#f6f5e8',
-  deepGreen: '#204a23',
-  contentBg: 'rgba(246, 245, 232, 1)',
-  contentBorder: '1px solid rgb(219, 219, 219)',
-  borderColor: 'rgba(219, 219, 219,0.5)',
-  red: '#db9393',
-  green: '#a9c7ab',
-  waterColor: 'rgba(92, 184, 255,0.3)',
-  sunlightColor: 'rgba(255, 208, 99,0.3)',
-  temperatureColor: 'rgba(255, 212, 217,0.3)',
-  waterAccentColor: 'rgba(92, 184, 255,0.8)',
-  sunlightAccentColor: 'rgba(255, 208, 99,0.8)',
-  temperatureAccentColor: 'rgba(255, 212, 217,0.8)',
-  waterGradient: 'linear-gradient(90deg, rgba(180,238,255,1) 19%, rgba(92,184,255,1) 75%)',
-  sunlightGradient: 'linear-gradient(90deg, rgba(255,231,160,1) 16%, rgba(253,200,151,1) 84%)',
-  temperatureGradient: 'linear-gradient(90deg, rgba(183,219,255,1) 16%, rgba(255,212,217,1) 69%)',
-  borderColor1: 'rgba(219,219,219)',
-  borderColor2: 'rgba(51,51,51,.2)',
   keyBlue: '#4a99c3',
+  keyDeepBlue: '#0b547a',
 }
 
 export const darkTheme = {
@@ -54,5 +34,47 @@ export const GlobalStyles = createGlobalStyle`
   #wrapper{
     padding-bottom: 10px;
   }
+  main{
+    margin:130px 5% 0;
+    width: auto;
+    transition: all .5s;
+  }
+
+  .lg-img-wrap > .lg-image {
+    max-width: 80% !important;
+    width: auto !important;
+  }
+  .cursor {
+      width: 40px;
+      height: 40px;
+      border: 1px solid #333;
+      border-radius: 100%;
+      position: fixed;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      z-index: 9999;
+      mix-blend-mode:difference;
+      transition: all .5s ease;
+      transition-property:  opacity, background-color, transform, mix-blend-mode;
+    }
+
+    .cursor--clicked {
+      transform: translate(-50%, -50%) scale(2);
+      background-color: #fefefe;
+    }
+
+    .cursor--link-hovered {
+      transform: translate(-50%, -50%) scale(2);
+      background-color: #fff;
+      border-width: 1;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    html, body {
+      cursor: none;
+    }
 
 `

@@ -9,13 +9,14 @@ import Banner4 from 'assets/img/banner/4.jpg'
 import ShortCut1 from 'assets/img/m_1.jpg'
 import ShortCut2 from 'assets/img/m_2.jpg'
 import ShortCut3 from 'assets/img/m_3.jpg'
+import ProfileImg from 'assets/img/profile.jpg'
 
 import {Swiper, SwiperSlide} from 'swiper/react'
 import SwiperCore, {Navigation, Pagination} from 'swiper'
 SwiperCore.use([Navigation, Pagination])
 import 'swiper/swiper-bundle.css'
 
-const Container = styled.article`
+const Container = styled.main`
   & .swiper-container {
     width: 100%;
     height: 100%;
@@ -27,7 +28,6 @@ const Container = styled.article`
   & .swiper-slide {
     display: flex;
     align-items: center;
-    overflow-y: scroll;
   }
   & .swiper-button-prev:after,
   .swiper-button-next:after {
@@ -35,8 +35,8 @@ const Container = styled.article`
   }
 
   & .swiper-pagination-bullet {
-    width: 15px;
-    height: 15px;
+    width: 10px;
+    height: 10px;
     background-color: #fff;
   }
 
@@ -136,6 +136,8 @@ const ShortCutWrap = styled.ul`
   margin: 0 auto;
   a {
     display: block;
+    background-color: #fff;
+    padding-bottom: 40px;
   }
   img {
     display: block;
@@ -146,6 +148,69 @@ const ShortCutWrap = styled.ul`
     display: block;
     margin: 30px auto;
     text-align: center;
+  }
+  @media screen and (max-width: 1024px) {
+    display: block;
+    width: 100%;
+  }
+`
+
+const AboutSection = styled.div`
+  margin-bottom: 100px;
+`
+const AboustSectionUl = styled.ul`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  margin: 0 auto;
+  padding: 50px 0 100px;
+  li {
+    display: flex;
+    align-items: center;
+    width: 48%;
+    height: 500px;
+    margin: 0 auto;
+    img {
+      width: 100%;
+    }
+  }
+  @media screen and (max-width: 1024px) {
+    display: block;
+    width: 100%;
+    li {
+      width: 100%;
+      height: auto;
+    }
+  }
+`
+
+const AboutRightList = styled.li`
+  background-color: #fafafa;
+  span {
+    display: block;
+  }
+
+  div {
+    width: 90%;
+    height: 90%;
+    margin: auto;
+    margin-top: 3.5%;
+    padding: 10px;
+    .name-span {
+      font-size: 22px;
+      font-weight: 600;
+      padding: 20px 0;
+    }
+    dt {
+      font-size: 18px;
+      font-weight: 600;
+      padding: 20px 0;
+    }
+    dd span {
+      font-size: 18px;
+      margin: 5px 0;
+    }
   }
 `
 
@@ -219,6 +284,36 @@ const Home = () => {
           </Link>
         </li>
       </ShortCutWrap>
+
+      <AboutSection>
+        <AboustSectionUl>
+          <li>
+            <img src={ProfileImg} alt="profileImg" />
+          </li>
+          <AboutRightList>
+            <div>
+              <span className="name-span">김무경</span>
+              <dl>
+                <dt>CERTIFICATE</dt>
+                <dd>
+                  <span>2017.10.13 GTQ인디자인1급 한국생산성본부</span>
+                  <span>2017.09.29 전자출판기능사 한국산업인력공단</span>
+                  <span>2017.07.14 GTQ 1급 한국생산성본부</span>
+                  <span>2017.06.23 컴퓨터그래픽스운용기능사 한국산업인력공단</span>
+                  <span>2017.05.12 GTQ일러스트1급 한국생산성본부</span>
+                </dd>
+              </dl>
+              <dl>
+                <dt>EDUCATION</dt>
+                <dd>
+                  <span>2017 [NCS]창의적광고디자인 취업자 과정</span>
+                  <span>2017 공주대학교 게임디자인학과 졸업</span>
+                </dd>
+              </dl>
+            </div>
+          </AboutRightList>
+        </AboustSectionUl>
+      </AboutSection>
     </Container>
   )
 }
