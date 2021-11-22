@@ -1,10 +1,9 @@
 import React from 'react'
-import Header from 'Components/Layout/Header'
 import {BrowserRouter} from 'react-router-dom'
 import {ThemeProvider} from 'styled-components'
 import {GlobalStyles, lightTheme} from '../../Styles'
 import Cursor from '../Cursor'
-
+import Header from '../Layout/Header'
 import Routes from './Routes'
 
 const App = () => {
@@ -12,7 +11,7 @@ const App = () => {
     <ThemeProvider theme={lightTheme}>
       <GlobalStyles />
       <BrowserRouter>
-        <Cursor />
+        {/* <Cursor /> */}
         <Header />
         <Routes />
       </BrowserRouter>

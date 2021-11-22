@@ -111,7 +111,7 @@ const Header = () => {
         })
       }
     }
-  })
+  }, [])
 
   return (
     <Container>
@@ -192,19 +192,19 @@ const Header = () => {
           </li>
 
           <li className="depth_1 depth_eventdesign">
-            <a href="sub_5.html">Event Design</a>
+            <Link to="/event_design">Event Design</Link>
             <ul className="depth_detail_box">
               <li className="tit">Event Design</li>
               <li className="menu_detail">
                 <ul className="depth_2_box">
                   <li className="depth_2">
-                    <a href="#">국립중앙도서관</a>
+                    <Link to="/event_design">국립중앙도서관</Link>
                   </li>
                   <li className="depth_2">
-                    <a href="#">정보진흥원</a>
+                    <Link to="/event_design">정보진흥원</Link>
                   </li>
                   <li className="depth_2">
-                    <a href="#">충현복지관</a>
+                    <Link to="/event_design">충현복지관</Link>
                   </li>
                 </ul>
               </li>

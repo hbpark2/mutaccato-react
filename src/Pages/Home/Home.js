@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import {Link} from 'react-router-dom'
 import styled from 'styled-components'
 
@@ -15,6 +15,7 @@ import {Swiper, SwiperSlide} from 'swiper/react'
 import SwiperCore, {Navigation, Pagination} from 'swiper'
 SwiperCore.use([Navigation, Pagination])
 import 'swiper/swiper-bundle.css'
+import {FadeInTopToBottom, TopToBottom} from '../../Styles'
 
 const Container = styled.main`
   & .swiper-container {
@@ -134,15 +135,18 @@ const ShortCutWrap = styled.ul`
   justify-content: space-around;
   width: 80%;
   margin: 0 auto;
+
   a {
     display: block;
     background-color: #fff;
     padding-bottom: 40px;
   }
+
   img {
     display: block;
     width: 80%;
     margin: 0 auto;
+    border-radius: 15px;
   }
   span {
     display: block;
@@ -153,6 +157,15 @@ const ShortCutWrap = styled.ul`
     display: block;
     width: 100%;
   }
+`
+
+const ShortcutList = styled.li`
+  position: relative;
+  /* top: ${props => (props.shortcutMove ? '0px' : '-60px')}; */
+  animation-name: ${props => props.shortcutMove && TopToBottom};
+  animation-duration: ${props => Math.random() * 2}s;
+  /* animation-duration: 0.5s; */
+  transition: 0.5s;
 `
 
 const AboutSection = styled.div`
@@ -175,6 +188,7 @@ const AboustSectionUl = styled.ul`
       width: 100%;
     }
   }
+
   @media screen and (max-width: 1024px) {
     display: block;
     width: 100%;
@@ -215,6 +229,7 @@ const AboutRightList = styled.li`
 `
 
 const Home = () => {
+  const [shortcutMove, setShortcutMove] = useState(false)
   const mainSlideArr = [
     {
       title: '김무경의 포트폴리오',
@@ -231,9 +246,20 @@ const Home = () => {
     return item.sub_title.replace(/\n/gi, '\\r\\n')
   })
 
-  console.log(mainSlideArr.sub_title)
+  useEffect(() => {
+    window.addEventListener('scroll', e => {
+      const scl = window.scrollY
+      if (scl > 700) {
+        console.log('a')
+        setShortcutMove(true)
+      } else {
+        setShortcutMove(false)
+      }
+    })
+  })
+
   return (
-    <Container id="content">
+    <Container>
       <h2 className="hidden">CONTENT SECTION</h2>
       <Swiper spaceBetween={0} slidesPerView={1} pagination={{clickable: true}}>
         {mainSlideArr?.map((item, index) => {
@@ -265,24 +291,24 @@ const Home = () => {
         <span>클라이언트가 원하는 디자인을 위해 귀 기울이겠습니다.</span>
       </IntroTextWrap>
       <ShortCutWrap>
-        <li>
+        <ShortcutList shortcutMove={shortcutMove}>
           <Link to="/page_detail">
             <img src={ShortCut1} alt="shortcut img" />
             <span>Page Detail</span>
           </Link>
-        </li>
-        <li>
+        </ShortcutList>
+        <ShortcutList shortcutMove={shortcutMove}>
           <Link to="/">
             <img src={ShortCut2} alt="shortcut img" />
             <span>Look Book</span>
           </Link>
-        </li>
-        <li>
+        </ShortcutList>
+        <ShortcutList shortcutMove={shortcutMove}>
           <Link to="/">
             <img src={ShortCut3} alt="shortcut img" />
             <span>Album Cover</span>
           </Link>
-        </li>
+        </ShortcutList>
       </ShortCutWrap>
 
       <AboutSection>

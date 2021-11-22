@@ -2,12 +2,21 @@ import {createGlobalStyle, keyframes} from 'styled-components'
 
 export const FadeInTopToBottom = keyframes`
   from {
-    top: -30px;
+    top: -60px;
     opacity:0;
   }
   to {
     top: 0px;
     opacity:1;
+  }
+`
+
+export const TopToBottom = keyframes`
+  from {
+    top: -30px;
+  }
+  to {
+    top: 0px;
   }
 `
 
@@ -34,8 +43,9 @@ export const GlobalStyles = createGlobalStyle`
   #wrapper{
     padding-bottom: 10px;
   }
+  
   main{
-    margin:130px 5% 0;
+    /* margin:130px 5% 0; */
     width: auto;
     transition: all .5s;
   }
@@ -73,8 +83,8 @@ export const GlobalStyles = createGlobalStyle`
       text-decoration: none;
     }
 
-    html, body {
+    /* html, body {
       cursor: none;
-    }
+    } */
 
 `

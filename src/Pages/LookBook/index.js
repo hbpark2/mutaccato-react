@@ -6,7 +6,6 @@ import {SS2018} from '../../ImageData/SS18Data'
 import {FW2018} from '../../ImageData/FW18Data'
 import {SS2019} from '../../ImageData/SS19Data'
 
-
 const Container = styled.main``
 
 const Tab = styled.ul`

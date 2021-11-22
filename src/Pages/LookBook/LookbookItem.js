@@ -77,6 +77,7 @@ const LookbookItem = ({lbData}) => {
       </ListWrap>
     )
   }
+  
   return (
     <>
       <MakeList title="J'AIMEBLANC" data={lbData.J} type="J" />
