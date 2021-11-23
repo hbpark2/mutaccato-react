@@ -1,6 +1,5 @@
 import React from 'react'
-
-import About from 'Pages/About'
+import About from '../../Pages/About'
 import Home from '../../Pages/Home'
 import PageDetail from '../../Pages/PageDetail'
 import LookBook from '../../Pages/LookBook'

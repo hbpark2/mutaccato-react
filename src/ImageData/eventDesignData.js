@@ -32,16 +32,15 @@ import E3_13 from 'assets/img/eventdesign/3/e_13.jpg'
 import E3_14 from 'assets/img/eventdesign/3/e_14.jpg'
 
 export const eventDesing1 = {
-  thumb: E1_THUMB,
-  image: [E1_1, E1_2, E1_3],
+  image: [E1_THUMB, E1_1, E1_2, E1_3],
 }
 
 export const eventDesing2 = {
-  thumb: E2_THUMB,
-  image: [E2_1, E2_2, E2_3, E2_4, E2_5, E2_6, E2_7, E2_8, E2_9, E2_10],
+  image: [E2_THUMB, E2_1, E2_2, E2_3, E2_4, E2_5, E2_6, E2_7, E2_8, E2_9, E2_10],
 }
 
+// image: [E2_THUMB, E2_1, E2_2, E2_3, E2_4, E2_5, E2_6, E2_7, E2_8, E2_9, E2_10],
+
 export const eventDesing3 = {
-  thumb: E3_THUMB,
-  image: [E3_1, E3_2, E3_3, E3_4, E3_5, E3_6, E3_7, E3_8, E3_9, E3_10, E3_11, E3_12, E3_13, E3_14],
+  image: [E3_THUMB, E2_2, E2_3, E2_4, E2_5, E2_6, E2_7, E2_8, E2_9, E2_10],
 }

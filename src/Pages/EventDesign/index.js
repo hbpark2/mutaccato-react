@@ -6,7 +6,9 @@ import {LightgalleryProvider, LightgalleryItem, useLightgallery} from 'react-lig
 import LayerBox from '../../Components/LayerBox'
 
 const Container = styled.main``
-
+const Inner = styled.div`
+  padding-top: 50px;
+`
 const ListWrap = styled.ul`
   display: flex;
   width: 95%;
@@ -16,7 +18,6 @@ const ListWrap = styled.ul`
 `
 const List = styled.li`
   display: flex;
-
   justify-content: center;
   align-items: center;
   width: 50%;
@@ -61,10 +62,10 @@ const EventDesign = () => {
     return (
       <ListWrap>
         {(title === '2020 국립중앙도서관 [04.18]' || title === '2019 웹툰 체험형 전시회 그.리.다 [11.21 - 11.23]') && (
-          <div>
+          <List>
             <Title>{title}</Title>
             <Description>{desc}</Description>
-          </div>
+          </List>
         )}
         <List>
           <LightgalleryProvider>
@@ -77,10 +78,10 @@ const EventDesign = () => {
           </LightgalleryProvider>
         </List>
         {title === '2019 윤리대전 [12.4]' && (
-          <div>
+          <List>
             <Title>{title}</Title>
             <Description>{desc}</Description>
-          </div>
+          </List>
         )}
       </ListWrap>
     )
@@ -92,19 +93,63 @@ const EventDesign = () => {
   )
   return (
     <Container>
-      <MakeList title="2020 국립중앙도서관 [04.18]" data={eventDesing1.image} type="J" desc="- 5층 고문헌실 현관 디자인" />
-      <MakeList title="2019 윤리대전 [12.4]" data={eventDesing2.image} type="L" desc="- 주최 및 주관 방송통신위원회. NIA 한국정보화진흥원" />
-      <MakeList
-        title="2019 웹툰 체험형 전시회 그.리.다 [11.21 - 11.23]"
-        data={eventDesing3.image}
-        type="M"
-        desc="- 주최 및 주관
-문화체육관광부. 한국만화영상진흥원. 강남구청.
-충현복지재단. 충현복지관
-- 후원 및 협찬
-문화체육관광부. 한국만화영상진흥원. 강남구청.
-에이원. 컬쳐솔루션"
-      />
+      <Inner>
+        <ListWrap>
+          <List>
+            <Title>2020 국립중앙도서관 [04.18]</Title>
+            <Description>- 5층 고문헌실 현관 디자인</Description>
+          </List>
+
+          <List>
+            <LightgalleryProvider>
+              <div style={{display: 'none'}}>
+                {eventDesing1.image.map((p, idx) => (
+                  <PhotoItem key={idx} image={p} group={'01'} />
+                ))}
+              </div>
+              <OpenButtonWithHook type={'01'} thumb={eventDesing1.image[0]} />
+            </LightgalleryProvider>
+          </List>
+        </ListWrap>
+
+        <ListWrap>
+          <List>
+            <LightgalleryProvider>
+              <div style={{display: 'none'}}>
+                {eventDesing2.image.map((p, idx) => (
+                  <PhotoItem key={idx} image={p} group={'02'} />
+                ))}
+              </div>
+              <OpenButtonWithHook type={'02'} thumb={eventDesing2.image[0]} />
+            </LightgalleryProvider>
+          </List>
+          <List>
+            <Title>2019 윤리대전 [12.4]</Title>
+            <Description>- 주최 및 주관 방송통신위원회. NIA 한국정보화진흥원</Description>
+          </List>
+        </ListWrap>
+
+        <ListWrap>
+          <List>
+            <Title>2019 웹툰 체험형 전시회 그.리.다 [11.21 - 11.23]</Title>
+            <Description>
+              - 주최 및 주관 문화체육관광부. 한국만화영상진흥원. 강남구청. 충현복지재단. 충현복지관 - 후원 및 협찬 문화체육관광부. 한국만화영상진흥원.
+              강남구청. 에이원. 컬쳐솔루션
+            </Description>
+          </List>
+
+          <List>
+            <LightgalleryProvider>
+              <div style={{display: 'none'}}>
+                {eventDesing3.image.map((p, idx) => (
+                  <PhotoItem key={idx} image={p} group={'03'} />
+                ))}
+              </div>
+              <OpenButtonWithHook type={'03'} thumb={eventDesing3.image[0]} />
+            </LightgalleryProvider>
+          </List>
+        </ListWrap>
+      </Inner>
     </Container>
   )
 }
