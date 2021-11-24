@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import {LightgalleryProvider, LightgalleryItem, useLightgallery} from 'react-lightgallery'
 
 import 'lightgallery.js/dist/css/lightgallery.css'
-import LayerBox from '../../Components/LayerBox'
+import LayerBox from '../../Components/Common/LayerBox'
 import {FadeIn} from '../../Styles'
 
 const ListWrap = styled.ul`

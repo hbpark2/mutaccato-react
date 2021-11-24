@@ -1,4 +1,5 @@
 import {createGlobalStyle, keyframes} from 'styled-components'
+import reset from 'styled-reset'
 
 export const FadeInTopToBottom = keyframes`
   from {
@@ -32,6 +33,7 @@ export const FadeIn = keyframes`
 export const lightTheme = {
   keyBlue: '#4a99c3',
   keyDeepBlue: '#0b547a',
+  accentColor: '#0b547a',
 }
 
 export const darkTheme = {
@@ -40,20 +42,71 @@ export const darkTheme = {
 }
 
 export const GlobalStyles = createGlobalStyle`
+  ${reset};
+
   #wrapper{
     padding-bottom: 10px;
   }
-  
-  main{
-    /* margin:130px 5% 0; */
-    width: auto;
+
+  body {
+  font-family: 'Nanum Gothic', sans-serif;
+  font-size: 16px;
+  color: #333;
+}
+
+body::-webkit-scrollbar {
+  width: 10px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #d9cbba;
+  height: 20px;
+}
+
+body::-webkit-scrollbar-track {
+  background-color: #fafafa;
+}
+
+.font_box {
+  text-align: center;
+  padding: 3px;
+  border: 1px solid #0b547a;
+  font-weight: 600;
+  transition: all 0.5s;
+}
+
+.font_box:hover {
+  background-color: #0b547a;
+  color: #fff;
+}
+
+.hidden {
+  display: block;
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  color: #fff;
+}
+
+main {
+  margin-top: 130px;
+  width: auto;
     transition: all .5s;
-  }
+}
+
+section {
+  width: 100%;
+  overflow: hidden;
+}
+
 
   .lg-img-wrap > .lg-image {
     max-width: 80% !important;
     width: auto !important;
   }
+
   .cursor {
       width: 40px;
       height: 40px;
@@ -82,9 +135,5 @@ export const GlobalStyles = createGlobalStyle`
     a {
       text-decoration: none;
     }
-
-    /* html, body {
-      cursor: none;
-    } */
 
 `

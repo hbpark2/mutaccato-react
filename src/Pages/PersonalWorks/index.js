@@ -1,10 +1,10 @@
 import React from 'react'
 import {LightgalleryProvider, LightgalleryItem, useLightgallery} from 'react-lightgallery'
-import {packageData} from '../../ImageData/packageData'
 import LayerBox from '../../Components/Common/LayerBox'
 import {Container, Image, ListWrap, OpenGalleryBtn} from '../../Components/Common/LightgalleryGrid'
+import {personalWorksData} from '../../ImageData/personalWorksData'
 
-const Package = () => {
+const PersonalWorks = () => {
   const PhotoItem = ({image, thumb, group}) => (
     <OpenGalleryBtn>
       <LightgalleryItem group={group} src={image} thumb={thumb}>
@@ -18,7 +18,7 @@ const Package = () => {
     <Container>
       <ListWrap>
         <LightgalleryProvider>
-          {packageData.map((p, idx) => (
+          {personalWorksData.map((p, idx) => (
             <PhotoItem key={idx} image={p} group={'01'} />
           ))}
         </LightgalleryProvider>
@@ -26,4 +26,4 @@ const Package = () => {
     </Container>
   )
 }
-export default Package
+export default PersonalWorks

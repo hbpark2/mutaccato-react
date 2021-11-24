@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React, {useEffect, useState} from 'react'
 import styled from 'styled-components'
 import Logo from 'assets/img/logo.jpg'
 import DetailPageMenu from 'assets/img/banner/menu_detail.jpg'
@@ -9,14 +9,24 @@ import {Link} from 'react-router-dom'
 
 const Container = styled.header``
 
+const NavList = styled.li``
+
+const DepthUl = styled.ul``
+
+const SLink = styled(Link)``
+
 const Header = () => {
+  const [headerCurrent, setHeaderCurrent] = useState(false)
+
   useEffect(() => {
     const headerBox = document.querySelector('header')
     const trigerDetailDepth = document.querySelector('.depth_detail')
     const trigerDetailLookbook = document.querySelector('.depth_lookbook')
+    const trigerDetailEvent = document.querySelector('.depth_eventdesign')
 
     const targetDetailDepth = document.querySelector('.depth_detail > ul')
     const targetDetailLookbook = document.querySelector('.depth_lookbook > ul')
+    const targetDetailEvent = document.querySelector('.depth_eventdesign > ul')
 
     const article = document.getElementById('content')
 
@@ -83,6 +93,30 @@ const Header = () => {
           headerBox.style.height = 130 + 'px'
           headerBox.style.opacity = 0.9
         })
+
+        //이벤트
+        trigerDetailEvent.addEventListener('mouseover', () => {
+          targetDetailEvent.style.display = 'block'
+          targetDetailEvent.style.opacity = 1
+          headerBox.style.height = 400 + 'px'
+          headerBox.style.opacity = 1
+        })
+
+        targetDetailEvent.addEventListener('mouseover', () => {
+          targetDetailEvent.previousElementSibling.style.borderBottom = '2px solid #4a99c3'
+          targetDetailEvent.previousElementSibling.style.color = '#0b547a'
+        })
+
+        targetDetailEvent.addEventListener('mouseout', () => {
+          targetDetailEvent.previousElementSibling.style.borderBottom = ''
+          targetDetailEvent.previousElementSibling.style.color = '#333'
+        })
+
+        trigerDetailEvent.addEventListener('mouseout', () => {
+          targetDetailEvent.style.display = 'none'
+          headerBox.style.height = 130 + 'px'
+          headerBox.style.opacity = 0.9
+        })
       }
     } else {
       // max-width 1024px, 태블릿, 모바일
@@ -114,7 +148,7 @@ const Header = () => {
   }, [])
 
   return (
-    <Container>
+    <Container headerCurrent={headerCurrent}>
       <h1 className="logo">
         <span className="hidden">MUTACCATO</span>
         <Link to="/">
@@ -127,99 +161,31 @@ const Header = () => {
           <i className="fas fa-bars"></i>
         </button>
         <ul id="gnb">
-          <li className="depth_1">
-            <Link to="/about">About M</Link>
-          </li>
+          {navArr.map((item, index) => (
+            <NavList className={item.class} key={`navItem${index}`}>
+              <Link to={{pathname: item.path, state: {pageState: item.pageState || ''}}}>{item.text}</Link>
 
-          <li className="depth_1 depth_detail">
-            <Link to={{pathname: '/page_detail', state: {pageState: 'Furniture'}}} className="go_detail">
-              Page Detail
-            </Link>
+              {item.children && (
+                <DepthUl className="depth_detail_box">
+                  <li className="tit">{item.text}</li>
 
-            <ul className="depth_detail_box">
-              <li className="tit">Page Detail</li>
-
-              <li className="menu_detail">
-                <ul className="depth_2_box">
-                  <li className="depth_2">
-                    <Link to={{pathname: '/page_detail', state: {pageState: 'Furniture'}}}>Furniture</Link>
+                  <li className="menu_detail">
+                    <ul className="depth_2_box">
+                      {item.children.map((cItem, cIndex) => (
+                        <li className={cItem.class} key={`navChildren${cIndex}`}>
+                          <Link to={{pathname: item.path, state: {pageState: cItem.pageState}}}>{cItem.text}</Link>
+                        </li>
+                      ))}
+                    </ul>
                   </li>
-                  <li className="depth_2">
-                    <Link to={{pathname: '/page_detail', state: {pageState: 'Food'}}}>Food</Link>
-                  </li>
-                  <li className="depth_2">
-                    <Link to={{pathname: '/page_detail', state: {pageState: 'Banner'}}}>Pop-up(Banner)</Link>
-                  </li>
-                </ul>
-              </li>
 
-              <li className="menu_img">
-                <img src={DetailPageMenu} alt="" />
-              </li>
-            </ul>
-          </li>
-
-          <li className="depth_1 depth_lookbook">
-            <Link to={{pathname: '/look_book', state: {pageState: '2018SS'}}} className="go_detail">
-              Lookbook
-            </Link>
-
-            <ul className="depth_detail_box">
-              <li className="tit">Look Book</li>
-
-              <li className="menu_detail">
-                <ul className="depth_2_box">
-                  <li className="depth_2">
-                    <Link to={{pathname: '/look_book', state: {pageState: '2018SS'}}}>2018.s/s</Link>
+                  <li className="menu_img">
+                    <img src={item.img} alt={item.alt} />
                   </li>
-                  <li className="depth_2">
-                    <Link to={{pathname: '/look_book', state: {pageState: '2019FW'}}}>2018.f/w</Link>
-                  </li>
-                  <li className="depth_2">
-                    <Link to={{pathname: '/look_book', state: {pageState: '2019SS'}}}>2019.s/s</Link>
-                  </li>
-                </ul>
-              </li>
-
-              <li className="menu_img">
-                <img src={LookBookMenu} alt="" />
-              </li>
-            </ul>
-          </li>
-
-          <li className="depth_1">
-            <Link to="/albumcover">Album Cover</Link>
-          </li>
-
-          <li className="depth_1 depth_eventdesign">
-            <Link to="/event_design">Event Design</Link>
-            <ul className="depth_detail_box">
-              <li className="tit">Event Design</li>
-              <li className="menu_detail">
-                <ul className="depth_2_box">
-                  <li className="depth_2">
-                    <Link to="/event_design">국립중앙도서관</Link>
-                  </li>
-                  <li className="depth_2">
-                    <Link to="/event_design">정보진흥원</Link>
-                  </li>
-                  <li className="depth_2">
-                    <Link to="/event_design">충현복지관</Link>
-                  </li>
-                </ul>
-              </li>
-              <li className="menu_img">
-                <img src={EventMenu} alt="" />
-              </li>
-            </ul>
-          </li>
-
-          <li className="depth_1">
-            <a href="sub_6.html">Package Design</a>
-          </li>
-          <li className="depth_1">
-            <a href="sub_7.html">Persnal Works</a>
-          </li>
+                </DepthUl>
+              )}
+            </NavList>
+          ))}
         </ul>
       </nav>
       <a href="https://www.instagram.com/mutaccato/" target="_black" className="go_insta">
@@ -228,5 +194,51 @@ const Header = () => {
     </Container>
   )
 }
+
+const navArr = [
+  {text: 'About M', path: '/about', class: 'depth_1', pageState: '', children: []},
+  {
+    text: 'Page Detail',
+    path: '/page_detail',
+    class: 'depth_1 depth_detail',
+    pageState: 'Furniture',
+    children: [
+      {text: 'Furniture', path: '/page_detail', class: 'depth_2', pageState: 'Furniture'},
+      {text: 'Food', path: '/page_detail', class: 'depth_2', pageState: 'Food'},
+      {text: 'Pop-up(Banner)', path: '/page_detail', class: 'depth_2', pageState: 'Banner'},
+    ],
+    img: DetailPageMenu,
+    alt: '',
+  },
+  {
+    text: 'Lookbook',
+    path: '/look_book',
+    class: 'depth_1 depth_lookbook',
+    pageState: '2018SS',
+    children: [
+      {text: '2018.s/s', path: '/look_book', class: 'depth_2', pageState: '2018SS'},
+      {text: '2018.f/w', path: '/look_book', class: 'depth_2', pageState: '2019FW'},
+      {text: '2019.s/s', path: '/look_book', class: 'depth_2', pageState: '2019SS'},
+    ],
+    img: LookBookMenu,
+    alt: '',
+  },
+  {text: 'Album Cover', path: '/albumcover', class: 'depth_1', pageState: '', children: []},
+  {
+    text: 'Event Design',
+    path: '/event_design',
+    class: 'depth_1 depth_eventdesign',
+    pageState: '',
+    children: [
+      {text: '국립중앙도서관', path: '/event_design', class: 'depth_2', pageState: ''},
+      {text: '정보진흥원', path: '/event_design', class: 'depth_2', pageState: ''},
+      {text: '충현복지관', path: '/event_design', class: 'depth_2', pageState: ''},
+    ],
+    img: EventMenu,
+    alt: '',
+  },
+  {text: 'Package Design', path: '/package_design', class: 'depth_1', pageState: '', children: []},
+  {text: 'Persnal Works', path: '/personal_works', class: 'depth_1', pageState: '', children: []},
+]
 
 export default Header

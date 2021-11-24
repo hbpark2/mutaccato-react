@@ -7,6 +7,7 @@ import AlbumCover from '../../Pages/AlbumCover'
 import {Route} from 'react-router'
 import EventDesign from '../../Pages/EventDesign'
 import Package from '../../Pages/PackageDesign'
+import PersonalWorks from '../../Pages/PersonalWorks'
 
 const Routes = () => {
   return (
@@ -17,7 +18,8 @@ const Routes = () => {
       <Route exact path="/look_book" component={LookBook} />
       <Route exact path="/albumcover" component={AlbumCover} />
       <Route exact path="/event_design" component={EventDesign} />
-      <Route exact path="/package" component={Package} />
+      <Route exact path="/package_design" component={Package} />
+      <Route exact path="/personal_works" component={PersonalWorks} />
     </>
   )
 }

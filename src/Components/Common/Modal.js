@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import {FadeIn} from '../Styles'
+import {FadeIn} from '../../Styles'
 
 const ScrollModalContainer = styled.div`
   position: fixed;

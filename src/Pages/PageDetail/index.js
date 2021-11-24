@@ -1,13 +1,13 @@
 import React, {useEffect, useState} from 'react'
 import {useLocation} from 'react-router'
 import styled from 'styled-components'
-import Modal from '../../Components/Modal'
+import Modal from '../../Components/Common/Modal'
 import {FadeIn, FadeInTopToBottom} from '../../Styles'
 import {bannerData, foodData, furnitureData} from '../../ImageData/detailData'
 import {LightgalleryProvider, LightgalleryItem, withLightgallery, useLightgallery} from 'react-lightgallery'
 
 import 'lightgallery.js/dist/css/lightgallery.css'
-import LayerBox from '../../Components/LayerBox'
+import LayerBox from '../../Components/Common/LayerBox'
 
 const Container = styled.main``
 
