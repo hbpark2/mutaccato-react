@@ -3,7 +3,7 @@ import {useLocation} from 'react-router'
 import styled from 'styled-components'
 import Modal from '../../Components/Common/Modal'
 import {FadeIn, FadeInTopToBottom} from '../../Styles'
-import {bannerData, foodData, furnitureData} from '../../ImageData/detailData'
+import {bannerData, foodData, furnitureData, testData} from '../../ImageData/detailData'
 import {LightgalleryProvider, LightgalleryItem, withLightgallery, useLightgallery} from 'react-lightgallery'
 
 import 'lightgallery.js/dist/css/lightgallery.css'
@@ -186,6 +186,9 @@ const PageDetail = () => {
         <Modal onCloseModal={onCloseModal} modalType={modalState} data={bannerData} index={imageIndex}>
           <ScrollModalInner>
             <img src={currentImage} />
+            {/* {testData[0].images.map(item => (
+              <img src={item} />
+            ))} */}
           </ScrollModalInner>
         </Modal>
       )}

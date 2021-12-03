@@ -13,7 +13,6 @@ const App = () => {
       <GlobalStyles />
       <BrowserRouter>
         {/* <Cursor /> */}
-        {/* <Header /> */}
         <NewHeader />
         <Routes />
       </BrowserRouter>

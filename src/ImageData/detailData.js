@@ -296,3 +296,15 @@ export const bannerData = [
   B_41,
   B_42,
 ]
+
+export const testData = [
+  {
+    thumbnail: require('assets/img/detail/food/food_thum/p_26.jpg').default,
+    images: [
+      require('assets/img/detail/food/food_thum/p_24.jpg').default,
+      require('assets/img/detail/food/food_thum/p_25.jpg').default,
+      require('assets/img/detail/food/food_thum/p_22.jpg').default,
+    ],
+    alt: '',
+  },
+]
