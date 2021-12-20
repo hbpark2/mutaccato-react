@@ -26,7 +26,7 @@ const Package = () => {
       <LightgalleryItem group={group} src={image} thumb={thumb}>
         <Image>
           <img src={image} alt="개인작품이미지" />
-        </Image>{" "}
+        </Image>
         <LayerBox />
       </LightgalleryItem>
     </OpenGalleryBtn>

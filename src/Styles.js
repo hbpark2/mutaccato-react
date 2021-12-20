@@ -1,5 +1,5 @@
-import {createGlobalStyle, keyframes} from 'styled-components'
-import reset from 'styled-reset'
+import { createGlobalStyle, keyframes } from "styled-components";
+import reset from "styled-reset";
 
 export const FadeInTopToBottom = keyframes`
   from {
@@ -10,7 +10,7 @@ export const FadeInTopToBottom = keyframes`
     top: 0px;
     opacity:1;
   }
-`
+`;
 
 export const TopToBottom = keyframes`
   from {
@@ -19,7 +19,7 @@ export const TopToBottom = keyframes`
   to {
     top: 0px;
   }
-`
+`;
 
 export const FadeIn = keyframes`
   from {
@@ -28,18 +28,18 @@ export const FadeIn = keyframes`
   to {
     opacity:1;
   }
-`
+`;
 
 export const lightTheme = {
-  keyBlue: '#4a99c3',
-  keyDeepBlue: '#0b547a',
-  accentColor: '#0b547a',
-}
+  keyBlue: "#4a99c3",
+  keyDeepBlue: "#0b547a",
+  accentColor: "#0b547a",
+};
 
 export const darkTheme = {
-  fontColor: '#fff',
-  bgColor: '#2c2c2c',
-}
+  fontColor: "#fff",
+  bgColor: "#2c2c2c",
+};
 
 export const GlobalStyles = createGlobalStyle`
   ${reset};
@@ -132,8 +132,5 @@ section {
       border-width: 1;
     }
 
-    a {
-      text-decoration: none;
-    }
 
-`
+`;
